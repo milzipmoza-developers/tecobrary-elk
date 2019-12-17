@@ -3,6 +3,8 @@ ARG ELK_VERSION="7.5.0"
 # https://github.com/elastic/elasticsearch-docker
 FROM docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
 
+COPY ./config/elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+
 # Add your elasticsearch plugins setup here
 # Example: RUN elasticsearch-plugin install analysis-icu
 
