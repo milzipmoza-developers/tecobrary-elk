@@ -56,3 +56,20 @@ $ docker build -t tecobrary-kibana .
 ```shell script
 $ docker run -p 5601:5601 --network tecobrary-elk-network --name tecobrary-kibana tecobrary-kibana
 ```
+
+## logstash
+<br>
+
+1. Docker image 빌드 명령어
+```shell script
+$ docker build -t tecobrary-logstash .
+```
+
+<br>
+
+2. Docker image run 명령어
+
+```shell script
+$ docker run -p 9600:9600 -p 5000:5000 -e "LS_JAVA_OPTS=-Xms256m -Xmx256m" \
+--network tecobrary-elk-network --name tecobrary-logstash tecobrary-logstash
+```
