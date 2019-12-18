@@ -39,6 +39,20 @@ $ docker build -t tecobrary-es .
 
 ```shell script
 $ docker run -p 9200:9200 -p 9300:9300 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
---name tecobrary-es tecobrary-es --network tecobrary-elk-network
+--network tecobrary-elk-network --name tecobrary-es tecobrary-es 
 ```
 
+## kibana
+<br>
+
+1. Docker image 빌드 명령어
+```shell script
+$ docker build -t tecobrary-kibana .
+```
+<br>
+
+2. Docker image run 명령어
+
+```shell script
+$ docker run -p 5601:5601 --network tecobrary-elk-network --name tecobrary-kibana tecobrary-kibana
+```
