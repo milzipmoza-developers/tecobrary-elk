@@ -3,6 +3,16 @@
 
 <br>
 
+# Shell Script 사용법
+<br>
+
+1. 도커 기존 컨테이너, 이미지 삭제 후 이미지 빌드 및 컨테이너 실행
+```shell script
+$ ./init_tecobrary_elk.sh
+```
+
+<br>
+
 # docker-compose 사용법
 <br>
 
@@ -28,6 +38,12 @@ $ docker rmi -f tecobrary-elk_tecobrary-es tecobrary-elk_tecobrary-kibana tecobr
 3. docker-compose 실행 명령어
 ```shell script
 $ ELK_VERSION="7.5.0" docker-compose up -d
+```
+<br>
+
+4. docker-compose 종료 명령어
+```shell script
+$ docker-compose down
 ```
 <br>
 
