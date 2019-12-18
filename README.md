@@ -3,6 +3,34 @@
 
 <br>
 
+# docker-compose 사용법
+<br>
+
+1. 실행중인 docker container 중지
+```shell script
+$ docker stop tecobrary-es tecobrary-kibana tecobrary-logstash 
+```
+<br>
+
+2. 기존 docker container 삭제
+```shell script
+$ docker rm tecobrary-es tecobrary-kibana tecobrary-logstash 
+```
+
+<br>
+
+3. 중지된 docker image 삭제
+```shell script
+$ docker rmi -f tecobrary-elk_tecobrary-es tecobrary-elk_tecobrary-kibana tecobrary-elk_tecobrary-logstash
+```
+<br>
+
+3. docker-compose 실행 명령어
+```shell script
+$ ELK_VERSION="7.5.0" docker-compose up -d
+```
+<br>
+
 # Docker Settings
 
 ## ELK Network
