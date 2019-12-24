@@ -44,6 +44,8 @@ services:
       - "5000:5000"
     environment:
       - "LS_JAVA_OPTS=-Xmx256m -Xms256m"
+      - MYSQL_URL=${MYSQL_URL}
+      - MYSQL_PORT=${MYSQL_PORT}
     depends_on:
       - tecobrary-es
     networks:
