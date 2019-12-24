@@ -18,26 +18,26 @@ $ ./init_tecobrary_elk.sh
 
 1. 실행중인 docker container 중지
 ```shell script
-$ docker stop tecobrary-es tecobrary-kibana tecobrary-logstash 
+$ docker stop es-elk logstash-elk kibana-elk 
 ```
 <br>
 
 2. 기존 docker container 삭제
 ```shell script
-$ docker rm tecobrary-es tecobrary-kibana tecobrary-logstash 
+$ docker rm es-elk logstash-elk kibana-elk
 ```
 
 <br>
 
 3. 중지된 docker image 삭제
 ```shell script
-$ docker rmi -f tecobrary-elk_tecobrary-es tecobrary-elk_tecobrary-kibana tecobrary-elk_tecobrary-logstash
+$ docker rmi -f tecobrary-elk_es-elk tecobrary-elk_logstash-elk tecobrary-elk_kibana-elk
 ```
 <br>
 
 3. docker-compose 실행 명령어
 ```shell script
-$ ELK_VERSION="7.5.0" docker-compose up -d
+$ ELK_VERSION="7.5.0" MYSQL_URL=[MYSQL_URL_입력] MYSQL_PORT=[MYSQL_PORT_입력] docker-compose up -d
 ```
 <br>
 
@@ -115,5 +115,6 @@ $ docker build -t tecobrary-logstash .
 
 ```shell script
 $ docker run -p 9600:9600 -p 5000:5000 -e "LS_JAVA_OPTS=-Xms256m -Xmx256m" \
+-e MYSQL_URL=[MYSQL_URL_입력] -e MYSQL_PORT=[MYSQL_PORT_입력] \
 --network tecobrary-elk-network --name tecobrary-logstash tecobrary-logstash
 ```
