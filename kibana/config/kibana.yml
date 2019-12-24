@@ -7,4 +7,4 @@ server.name: kibana
 server.host: "0.0.0.0"
 
 # --------------------------------- Elasticsearch ----------------------------------
-elasticsearch.hosts: [ "http://tecobrary-es:9200" ]
+elasticsearch.hosts: [ "http://es-elk:9200" ]
