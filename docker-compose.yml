@@ -41,7 +41,7 @@ services:
         ELK_VERSION: $ELK_VERSION
     ports:
       - "9600:9600"
-      - "5000:5000"
+      - "5001:5000"
     environment:
       - "LS_JAVA_OPTS=-Xmx256m -Xms256m"
       - MYSQL_URL=${MYSQL_URL}
