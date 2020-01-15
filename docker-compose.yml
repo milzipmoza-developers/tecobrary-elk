@@ -51,6 +51,15 @@ services:
     networks:
       - tecobrary-elk-network
 
+  elasticsearch-mapping-init:
+    container_name: elasticsearch-mapping-init
+    build:
+      context: ./elasticsearch-mapping-init/
+    depends_on:
+      - es-elk
+    networks:
+      - tecobrary-elk-network
+
 networks:
   tecobrary-elk-network:
     driver: bridge
